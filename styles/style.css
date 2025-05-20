@@ -1,0 +1,71 @@
+@import url('./normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+	transition-duration: 0.5s;
+	font-family: "Marvel", sans-serif;
+	font-weight: 700;
+}
+
+body {
+	background-color: #560319;
+}
+
+.container {
+	display: flex;
+	height: 100vh;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	padding-inline: 1rem;
+	width: 100%;
+}
+
+.slider {
+	position: relative;
+	height: 80vh;
+	flex: 1;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 1rem;
+}
+
+.slider h3 {
+	position: absolute;
+	bottom: -5rem;
+	left: 1rem;
+	font-size: 2rem;
+	color: #ffffff;
+	background-color: #56031950;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	border: 1px solid #560319;
+	opacity: 0;
+}
+
+.slider.active {
+	flex: 10;
+}
+
+.slider.active h3 {
+	bottom: 1rem;
+	opacity: 1;
+	transition: all 0.5s ease 0.4s;
+
+}
+
+@media (max-width: 480px) {
+	.container {
+		flex-direction: column;
+		padding-block: 1rem;
+	}
+	.slider {
+		width: 100%;
+	}
+}
